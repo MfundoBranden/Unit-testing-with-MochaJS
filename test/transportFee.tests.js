@@ -1,11 +1,12 @@
-describe('Test Transport Fee function', function () {
+describe('The transportFee function', function(){
 
-    it('it should return true if the registration number ends with L is from Limpopo', function () {
-        assert.equal(isFromLimpopo('KTR 990 L'), true);
+    it('This should return R20 when called with morning', function(){
+        assert.equal(transportFee('morning'), 'R20');
     });
-
-    it('it should return false if the registration number ends with N is from Limpopo', function () {
-        assert.equal(isFromLimpopo('W 990 N'), false);
+    it('This should return R10 when called with afternoon', function(){
+        assert.equal(transportFee('afternoon'), 'R10');
     });
-
-});
+    it('This should return for night shift return free when called with nightshift', function(){
+        assert.equal(transportFee('nightshift'), 'free', 'for night shift return free');
+    });
+   });
