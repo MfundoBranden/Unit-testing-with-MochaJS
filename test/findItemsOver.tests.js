@@ -32,14 +32,14 @@ var results3 = [
     {name : 'apples', qty : 37}
 ];
 
-describe('The findItemsOver20 function', function(){ 
-    it('This should return the item list1 with over 20', function(){
-        assert.deepEqual(results, findItemsOver20(itemList));
+describe('The findItemsOver function', function(){
+    it('This should return the item list1 with itemList', function(){
+        assert.deepEqual(results, findItemsOver(itemList, 20));
     });
-    it('This should return the item list2 with over 20', function(){
-        assert.deepEqual(results2, findItemsOver20(itemList2));
+    it('This should return the item list2 with itemList2', function(){
+        assert.deepEqual(results2, findItemsOver(itemList2, 20));
     });
-    it('This should return the item list3 with over 20', function(){
-        assert.deepEqual(results3, findItemsOver20(itemList3));
+    it('This should return the item list3 with oitemList3', function(){
+        assert.deepEqual(results3, findItemsOver(itemList3, 20));
     });  
 });
