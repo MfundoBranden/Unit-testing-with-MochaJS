@@ -1,35 +1,29 @@
-describe('Test Vehicle registration numbers from Cape Town function', function () {
+describe('The regCheck function', function(){
 
-    it('it should return true if the registration number starts with CA 123 908 is from Cape Town', function () {
-        assert.equal(isFromCapeTown('CA 123 908'), true);
+    it('This should return true when called with a name that endWith GP correctly', function(){
+        assert.equal(regCheck('DC 55 YU GP', 'GP'), true);
     });
-
-    it('it should return false if the registration number starts with CJ 123 908 is from Cape Town', function () {
-        assert.equal(isFromCapeTown('CJ 123 908'), false);
+    it('This should return false when called with a name that do not endWith GP correctly', function(){
+        assert.equal(regCheck('DC 55 YU GP', 'EC'), false);
+       
     });
-
-});
-
-describe('Test Vehicle registration numbers from Gauteng function', function () {
-
-    it('it should return true if the registration number ends with GP is from Gauteng', function () {
-        assert.equal(isFromGauteng('DR 45 LR GP'), true);
+    it('This should return true when called with a name that endWith L correctly', function(){
+        assert.equal(regCheck('5566 L', 'L'), true);
     });
-
-    it('it should return false if the registration number ends with CJ is from Gauteng', function () {
-        assert.equal(isFromGauteng('CJ 123 908'), false);
+    it('This should return false when called with a name that do not endWith L correctly', function(){
+        assert.equal(regCheck('5566 L', 'M'), false);
+       
     });
-
-});
-
-describe('Test Vehicle registration numbers from Limpopo function', function () {
-
-    it('it should return true if the registration number ends with L is from Limpopo', function () {
-        assert.equal(isFromLimpopo('KTR 990 L'), true);
+    it('This should return true when called with a name that endWith EC correctly', function(){
+        assert.equal(regCheck('ERT 123 EC', 'EC'), true);
     });
-
-    it('it should return false if the registration number ends with N is from Limpopo', function () {
-        assert.equal(isFromLimpopo('W 990 N'), false);
+    it('This should return false when called with a name that do not endWith EC correctly', function(){
+        assert.equal(regCheck('ERT 123 EC', 'GP'), false);
     });
-
+    it('This should return true when called with a name that endWith MP correctly', function(){
+        assert.equal(regCheck('FGT 123 MP', 'MP'), true);
+    });
+    it('This should return false when called with a name that do not endWith MP correctly', function(){
+        assert.equal(regCheck('FGT 123 MM', 'MP'), false);
+    });
 });
