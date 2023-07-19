@@ -1,11 +1,12 @@
-describe('Test Total Phone Bill function', function () {
+describe('The totalPhoneBill function', function(){ 
 
-    it('it should return true if the registration number ends with L is from Limpopo', function () {
-        assert.equal(isFromLimpopo('KTR 990 L'), true);
+    it('This should return R7.45 when called with call, sms, call, sms, sms ', function(){
+        assert.equal('R7.45', totalPhoneBill('call, sms, call, sms, sms'));
     });
-
-    it('it should return false if the registration number ends with N is from Limpopo', function () {
-        assert.equal(isFromLimpopo('W 990 N'), false);
+    it('This should return R7.45 when called with call, sms', function(){
+        assert.equal('R3.40', totalPhoneBill('call, sms'));
     });
-
+    it('This should return R7.45 when called with sms, sms ', function(){
+        assert.equal('R1.30', totalPhoneBill('sms, sms'));
+    });
 });
